@@ -1,0 +1,46 @@
+<%- include("partials/header.ejs") %>
+
+
+    <main>
+
+
+        <div class="container">
+
+            <%- include("partials/navigation.ejs") %>
+    
+
+        <div class="song-item">
+
+            <% if (locals.tracks){ %>
+                <ul>
+        
+                    <% tracks.forEach(track => { %>
+                        <li class="song-list">
+                            <img class="image" src= <%= track.image %>>
+
+                            <div class="song-detail">
+                                <p class="title"><%= track.title %></p>
+                                <p class="artist"><%= track.artist %></p>    
+                            </div>
+                            
+                        </li>           
+                    <% }); %>
+                </ul>
+            <% }else{ %>
+                <p style="color: white; font-weight: bold;">No songs available.</p>
+            <% } %>
+    
+
+        </div>
+
+        </div>
+
+        
+    </main>
+    
+
+
+<%- include("partials/footer.ejs") %>
+</body>
+</html>
+

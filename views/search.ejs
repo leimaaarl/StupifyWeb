@@ -1,0 +1,39 @@
+<%- include("partials/header.ejs") %>
+
+<div class="container">
+    <%- include("partials/navigation.ejs") %>
+
+
+    <div class="search">
+        
+        <form action="/result" method="POST">
+        <input type="text" placeholder="Search songs" name="q">
+        <input id="search-btn"  type="submit" value="Search" >
+        </form>  
+    </div>
+
+    <div class="song-item">
+
+        <% if (locals.tracks){ %>
+            <ul>
+    
+                <% tracks.forEach(track => { %>
+                    <li class="song-list">
+                        <img class="image" src= <%= track.image %>>
+
+                        <div class="song-detail">
+                            <p class="title"><%= track.title %></p>
+                            <p class="artist"><%= track.artist %></p>    
+                        </div>
+                        
+                    </li>           
+                <% }); %>
+            </ul>
+        <% }else{ %>
+            <p style="color: white; font-weight: bold; margin: 50px;">No songs available.</p>
+        <% } %>
+        
+    </div>
+</div>
+
+<%- include("partials/footer.ejs") %>
