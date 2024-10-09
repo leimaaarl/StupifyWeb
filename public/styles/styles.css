@@ -56,8 +56,9 @@ hr{
     display: grid;
     background-color: #121212;
     width: 90%;
+    
     height: 90vh;
-    margin: 3rem;
+    margin: 3rem auto;
     padding: 2rem;
     border-radius: 10px;
     grid-template-columns: 1fr 2fr;
